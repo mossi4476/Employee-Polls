@@ -1,132 +1,142 @@
 let users = {
   sarahedo: {
     id: 'sarahedo',
-    password:'password123',
     name: 'Sarah Edo',
-    avatarURL: null,
+    password:'1234567',
+    avatarURL: '/images/avatars/gorilla.png',
     answers: {
-      "8xf0y6ziyjabvozdd253nd": 'optionOne',
-      "6ni6ok3ym7mf1p33lnez": 'optionOne',
-      "am8ehyc8byjqgar0jgpub9": 'optionTwo',
-      "loxhs1bqm25b708cmbf3g": 'optionTwo'
+      '8xf0y6ziyjabvozdd253nd': 'optionOne'
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  tylermcginnis: {
-    id: 'tylermcginnis',
-    password:'abc321',
-    name: 'Tyler McGinnis',
-    avatarURL: null,
+  johndoe: {
+    id: 'johndoe',
+    name: 'John Doe',
+    password:'123123',
+    avatarURL: '/images/avatars/dog.png',
     answers: {
-      "vthrdm985a262al8qx3do": 'optionOne',
-      "xj352vofupe1dqz9emx13r": 'optionTwo',
+      xj352vofupe1dqz9emx13r: 'optionOne',
     },
-    questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
-  },
-  mtsamis: {
-    id: 'mtsamis',
-    password:'xyz123',
-    name: 'Mike Tsamis',
-    avatarURL: null,
-    answers: {
-      "xj352vofupe1dqz9emx13r": 'optionOne',
-      "vthrdm985a262al8qx3do": 'optionTwo',
-      "6ni6ok3ym7mf1p33lnez": 'optionOne'
-    },
-    questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
+    questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r']
   },
   zoshikanlu: {
     id: 'zoshikanlu',
     password:'pass246',
     name: 'Zenobia Oshikanlu',
-    avatarURL: null,
+    avatarURL: '/images/avatars/giraffe.png',
     answers: {
-      "xj352vofupe1dqz9emx13r": 'optionOne',
+      "xthrdm985a262al8qx3do": 'optionOne',
     },
-    questions: [],
+    questions: ['aj352vofupe1dqz9emx13r','xthrdm985a262al8qx3do','6ni6ok3ym7mf1p33lnez'],
   }
-}
+};
 
 let questions = {
-  "8xf0y6ziyjabvozdd253nd": {
+  '8xf0y6ziyjabvozdd253nd': {
     id: '8xf0y6ziyjabvozdd253nd',
     author: 'sarahedo',
     timestamp: 1467166872634,
     optionOne: {
       votes: ['sarahedo'],
-      text: 'Build our new application with Javascript',
+      text: 'have horrible short term memory'
     },
     optionTwo: {
       votes: [],
-      text: 'Build our new application with Typescript'
+      text: 'have horrible long term memory'
     }
   },
-  "6ni6ok3ym7mf1p33lnez": {
+  '6ni6ok3ym7mf1p33lnez': {
     id: '6ni6ok3ym7mf1p33lnez',
-    author: 'mtsamis',
+    author: 'johndoe',
     timestamp: 1468479767190,
     optionOne: {
       votes: [],
-      text: 'hire more frontend developers',
+      text: 'become a superhero'
     },
     optionTwo: {
-      votes: ['mtsamis', 'sarahedo'],
-      text: 'hire more backend developers'
+      votes: ['johndoe', 'sarahedo'],
+      text: 'become a supervillian'
     }
   },
-  "am8ehyc8byjqgar0jgpub9": {
+  am8ehyc8byjqgar0jgpub9: {
     id: 'am8ehyc8byjqgar0jgpub9',
     author: 'sarahedo',
     timestamp: 1488579767190,
     optionOne: {
       votes: [],
-      text: 'conduct a release retrospective 1 week after a release',
+      text: 'be telekinetic'
     },
     optionTwo: {
       votes: ['sarahedo'],
-      text: 'conduct release retrospectives quarterly'
+      text: 'be telepathic'
     }
   },
-  "loxhs1bqm25b708cmbf3g": {
+  loxhs1bqm25b708cmbf3g: {
     id: 'loxhs1bqm25b708cmbf3g',
-    author: 'tylermcginnis',
+    author: 'sarahedo',
     timestamp: 1482579767190,
     optionOne: {
       votes: [],
-      text: 'have code reviews conducted by peers',
+      text: 'be a front-end developer'
     },
     optionTwo: {
       votes: ['sarahedo'],
-      text: 'have code reviews conducted by managers'
+      text: 'be a back-end developer'
     }
   },
-  "vthrdm985a262al8qx3do": {
+  vthrdm985a262al8qx3do: {
     id: 'vthrdm985a262al8qx3do',
-    author: 'tylermcginnis',
+    author: 'sarahedo',
     timestamp: 1489579767190,
     optionOne: {
-      votes: ['tylermcginnis'],
+      votes: ['sarahedo'],
+      text: 'find $50 yourself'
+    },
+    optionTwo: {
+      votes: ['johndoe'],
+      text: 'have your best friend find $500'
+    }
+  },
+  xj352vofupe1dqz9emx13r: {
+    id: 'xj352vofupe1dqz9emx13r',
+    author: 'johndoe',
+    timestamp: 1493579767190,
+    optionOne: {
+      votes: ['johndoe'],
+      text: 'write JavaScript'
+    },
+    optionTwo: {
+      votes: ['sarahedo'],
+      text: 'write Swift'
+    }
+  },
+  xthrdm985a262al8qx3do: {
+    id: 'xthrdm985a262al8qx3do',
+    author: 'zoshikanlu',
+    timestamp: 1489579767190,
+    optionOne: {
+      votes: ['sarahedo'],
       text: 'take a course on ReactJS',
     },
     optionTwo: {
-      votes: ['mtsamis'],
+      votes: ['johndoe'],
       text: 'take a course on unit testing with Jest'
     }
   },
-  "xj352vofupe1dqz9emx13r": {
-    id: 'xj352vofupe1dqz9emx13r',
-    author: 'mtsamis',
+  aj352vofupe1dqz9emx13r: {
+    id: 'aj352vofupe1dqz9emx13r',
+    author: 'zoshikanlu',
     timestamp: 1493579767190,
     optionOne: {
-      votes: ['mtsamis', 'zoshikanlu'],
+      votes: ['johndoe', 'zoshikanlu'],
       text: 'deploy to production once every two weeks',
     },
     optionTwo: {
-      votes: ['tylermcginnis'],
+      votes: ['sarahedo'],
       text: 'deploy to production once every month'
     }
-  },
-}
+  }
+};
 
 function generateUID () {
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
@@ -148,7 +158,7 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
   return {
     id: generateUID(),
     timestamp: Date.now(),
-    author,
+    author: author.id,
     optionOne: {
       votes: [],
       text: optionOneText,
@@ -181,7 +191,15 @@ export function _saveQuestion (question) {
 export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
   return new Promise((resolve, reject) => {
     if (!authedUser || !qid || !answer) {
-      reject("Please provide authedUser, qid, and answer");
+      return reject("Error! Please provide all information");
+    }
+
+    if (!users[authedUser]) {
+      return reject("Error! User does not exist");
+    }
+
+    if (!questions[qid]) {
+      return reject("Error! Question does not exist");
     }
 
     setTimeout(() => {
