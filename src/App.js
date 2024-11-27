@@ -26,7 +26,7 @@ function App({dispatch, loggedIn}) {
                 <Route path="/" element={<Router><Home/></Router>}/>
                 <Route path="/leaderboard" exact element={<Router><Leaderboard/></Router>}/>
                 <Route path="/questions/:id" element={<Router><PollPage/></Router>}/>
-                <Route path="/add" exact element={<Router><NewPoll/></Router>}/>
+                <Route path="/new" exact element={<Router><NewPoll/></Router>}/>
                 <Route path='*' element={<Error404 />} />
             </Routes>
             <Footer/>
