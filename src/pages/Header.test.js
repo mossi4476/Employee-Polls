@@ -8,11 +8,16 @@ import { setAuthUser } from "../service/actions/authedUser";
 
 describe("Header", () => {
     it("Render Header component", () => {
-        store.dispatch(setAuthUser({id: "sarahedo", password: "1234567"}));
+        store.dispatch(setAuthUser({
+            id: "sarahedo", 
+            password: "1234567",
+            avatarURL: "/images/avatars/gorilla.png"
+        }));
+        
         const component = render(
             <Provider store={store}>
                 <BrowserRouter>
-                    <Header/>
+                    <Header />
                 </BrowserRouter>
             </Provider>
         );
@@ -21,12 +26,16 @@ describe("Header", () => {
     });
 
     it("Display username after login", () => {
-        store.dispatch(setAuthUser({id: "sarahedo", password: "1234567"}));
+        store.dispatch(setAuthUser({
+            id: "sarahedo", 
+            password: "1234567",
+            avatarURL: "/images/avatars/gorilla.png"
+        }));
 
         const component = render(
             <Provider store={store}>
                 <BrowserRouter>
-                    <Header/>
+                    <Header />
                 </BrowserRouter>
             </Provider>
         );
