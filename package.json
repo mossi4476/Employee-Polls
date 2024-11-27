@@ -9,6 +9,7 @@
     "@mui/material": "^5.15.18",
     "@reduxjs/toolkit": "^2.2.4",
     "@testing-library/user-event": "^14.2.0",
+    "employee-polls": "file:",
     "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

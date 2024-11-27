@@ -1,17 +1,23 @@
-import {fireEvent, render} from "@testing-library/react";
-import {Provider} from "react-redux";
-import {store} from "../service/store";
-import {BrowserRouter} from "react-router-dom";
+import { fireEvent, render, cleanup } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { store } from "../service/store";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import Login from "./Login";
 import { initialData } from "../service/actions/shared";
 
 describe("Login", () => {
-    it("Render sucess Login component", () => {
+    // Cleanup after each test to avoid memory leaks
+    afterEach(() => {
+        cleanup(); // Ensures components are removed after each test
+        jest.resetAllMocks(); // Clears all mocks like `global.alert`
+    });
+
+    it("Render success Login component", () => {
         const component = render(
             <Provider store={store}>
                 <BrowserRouter>
-                    <Login/>
+                    <Login />
                 </BrowserRouter>
             </Provider>
         );
@@ -19,35 +25,36 @@ describe("Login", () => {
         expect(component).toMatchSnapshot();
     });
 
-    it('Submit button login', async () => {
+    it("Submit button login", async () => {
+        // Dispatch the initial data
         await store.dispatch(initialData());
 
         const wrapper = render(
             <Provider store={store}>
                 <BrowserRouter>
-                    <Login/>
+                    <Login />
                 </BrowserRouter>
             </Provider>
         );
 
+        // Select elements
         const loginHeadingElement = wrapper.getByTestId("login-heading");
-        const usernameInputElement = wrapper.getByTestId("username");
-        const passwordInputElement = wrapper.getByTestId("password");
+        const userSelectElement = wrapper.getByTestId("user-select");
         const submitButtonElement = wrapper.getByTestId("loginBtn");
+
+        // Ensure elements are in the document
         expect(loginHeadingElement).toBeInTheDocument();
-        expect(usernameInputElement).toBeInTheDocument();
-        expect(passwordInputElement).toBeInTheDocument();
+        expect(userSelectElement).toBeInTheDocument();
         expect(submitButtonElement).toBeInTheDocument();
 
-        fireEvent.change(usernameInputElement, {target: {value: 'xxxx'}});
-        fireEvent.change(passwordInputElement, {target: {value: 'abc'}});
-        expect(usernameInputElement.value).toBe("xxxx");
-        expect(passwordInputElement.value).toBe("abc");
+        // Simulate user input and submit
+        fireEvent.change(userSelectElement, { target: { value: "nguyentiendung" } });
+        expect(userSelectElement.value).toBe("nguyentiendung");
+
         global.alert = jest.fn();
         fireEvent.click(submitButtonElement);
-        expect(loginHeadingElement).toBeInTheDocument();
-        expect(usernameInputElement.value).toBe("");
-        expect(passwordInputElement.value).toBe("");
-        expect(global.alert).toHaveBeenCalledTimes(1)
+
+        // Check alert was called
+        expect(global.alert).toHaveBeenCalledTimes(1);
     });
 });

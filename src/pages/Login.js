@@ -6,6 +6,7 @@ import "../login.css"; // Import file CSS
 import PropTypes from "prop-types";
 
 const users = [
+  { id: "nguyentiendung", name: "nguyentiendung", password: "1234567" },
   { id: "sarahedo", name: "Sarah Edo", password: "1234567" },
   { id: "johndoe", name: "John Doe", password: "123123" },
   { id: "zoshikanlu", name: "Zenobia Oshikanlu", password: "pass246" },

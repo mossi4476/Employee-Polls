@@ -6,8 +6,8 @@ describe("_saveQuestion &_saveQuestionAnswer", () => {
             optionOneText: "Option1test",
             optionTwoText: "Option2test",
             author: {
-                id: "sarahedo",
-                name: "sarahedo",
+                id: "nguyentiendung",
+                name: "nguyentiendung",
                 password: "1234567",
                 avatarURL: "/images/avatars/hacker.png",
                 answers: {
@@ -84,7 +84,7 @@ describe("_saveQuestion &_saveQuestionAnswer", () => {
     it("Save question with missing optionOneText returns error", async () => {
         const question = {
             optionTwoText: "Option 2 test",
-            author: "sarahedo",
+            author: "nguyentiendung",
         };
         const response = await _saveQuestion(question).catch(e => e);
 
